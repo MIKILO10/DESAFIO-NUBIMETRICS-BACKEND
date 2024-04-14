@@ -10,6 +10,7 @@ using Desafios.Nubimetrics.Persistence;
 using Desafios.Nubimetrics.Persistence.UnitOfWork;
 using MediatR;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System.Reflection;
 using System.Text.Json.Serialization;
 

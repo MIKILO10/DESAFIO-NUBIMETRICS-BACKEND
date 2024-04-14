@@ -1,13 +1,7 @@
 ﻿using Desafios.Nubimetrics.Persistence.Context;
-using Desafios.Nubimetrics.Persistence.Generics;
 using Desafios.Nubimetrics.Persistence.Repositories;
 using Desafios.Nubimetrics.Persistence.Repositories.Interfaces;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Serilog;
 
 namespace Desafios.Nubimetrics.Persistence.UnitOfWork
 {
@@ -19,9 +13,9 @@ namespace Desafios.Nubimetrics.Persistence.UnitOfWork
         private UsuariosRepository? _usuariosRepository;
 
 
-        public NubimetricsUnitOfWork(NubimetricsDbContext context, ILoggerFactory loggerFactory) 
+        public NubimetricsUnitOfWork(NubimetricsDbContext context ) 
         {
-            _logger = loggerFactory.CreateLogger<NubimetricsUnitOfWork>();
+            _logger = Log.ForContext<NubimetricsUnitOfWork>();
             _context= context;
         }
 

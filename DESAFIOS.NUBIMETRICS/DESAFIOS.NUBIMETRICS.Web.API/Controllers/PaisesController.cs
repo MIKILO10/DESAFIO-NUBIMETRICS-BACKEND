@@ -28,7 +28,7 @@ namespace Desafios.Nubimetrics.Web.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("{Pais:alpha}")]
+        [HttpGet("{pais:alpha}")]
         public async Task<IActionResult> GetById(string pais)
         {
             var result = await _mediator.Send(new PaisGetById(pais));
