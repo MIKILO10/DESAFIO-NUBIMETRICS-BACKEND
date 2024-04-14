@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Desafios.Nubimetrics.Persistence\Desafios.Nubimetrics.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="PaisesEntity\Others\" />
+  </ItemGroup>
+
 </Project>
