@@ -8,6 +8,7 @@ namespace Desafios.Nubimetrics.Persistence.Generics.Interfaces
         Task<Result<T>> Create(T entity);
         Task<Result<T>> Update(T entity);
         Task<Result<T>> Delete(T entity);
-      
+        Task<Result<T>> GetById(int id);
+        Task<Result<List<T>>> GetAll();
     }
 }

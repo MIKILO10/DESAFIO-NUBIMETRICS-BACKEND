@@ -20,7 +20,7 @@ namespace Desafios.Nubimetrics.Persistence.Generics
         }
 
 
-        //command
+   
         public virtual async Task<Result<T>> Create(T entity)
         {
             try
@@ -88,8 +88,40 @@ namespace Desafios.Nubimetrics.Persistence.Generics
             }
         }
 
+        public virtual async Task<Result<T>> GetById(int id)
+        {
+            
+            try
+            {
+                var entity = await dbSet.FindAsync( id);
 
-      
+                if (entity == null)
+                {
+                    return Result<T>.Failure($"No se encontro el registro con el id {id}");
+                }
+
+                return Result<T>.Success(entity);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "{Repo} GetById function error", "");
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public virtual async Task<Result<List<T>>> GetAll()
+        {
+            try
+            {
+                var entities = await dbSet.ToListAsync();
+                return Result<List<T>>.Success(entities);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "{Repo} GetAll function error", "");
+                return Result<List<T>>.Failure(ex.Message);
+            }
+        }
     }
 
 }

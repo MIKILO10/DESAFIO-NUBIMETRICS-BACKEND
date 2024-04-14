@@ -11,19 +11,21 @@ using System.Threading.Tasks;
 
 namespace Desafios.Nubimetrics.Persistence.UnitOfWork
 {
-    public class NubimetricsUnitOfWork : GenericUnitOfWork<NubimetricsDbContext>, IDisposable
+    public class NubimetricsUnitOfWork 
     {
         private readonly ILogger _logger;
+        private readonly NubimetricsDbContext _context;
 
-        private PaisRepository? _paisRepository;
+        private UsuariosRepository? _usuariosRepository;
 
 
-        public NubimetricsUnitOfWork(NubimetricsDbContext context, ILoggerFactory loggerFactory) : base(context)
+        public NubimetricsUnitOfWork(NubimetricsDbContext context, ILoggerFactory loggerFactory) 
         {
             _logger = loggerFactory.CreateLogger<NubimetricsUnitOfWork>();
+            _context= context;
         }
 
-        public IPaisRepository  paisRepository => _paisRepository   = _paisRepository ?? new PaisRepository(_context, _logger);
+        public IUsuariosRepository  usuariosRepository => _usuariosRepository = _usuariosRepository ?? new UsuariosRepository(_context, _logger);
 
 
     }

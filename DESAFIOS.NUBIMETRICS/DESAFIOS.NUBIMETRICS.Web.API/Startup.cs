@@ -2,6 +2,8 @@
 using Desafios.Nubimetrics.Application.BusquedasEntity.Services;
 using Desafios.Nubimetrics.Application.PaisesEntity.Handlers;
 using Desafios.Nubimetrics.Application.PaisesEntity.Services;
+using Desafios.Nubimetrics.Application.UsuariosEntity.Handler;
+using Desafios.Nubimetrics.Application.UsuariosEntity.Services;
 using Desafios.Nubimetrics.Application.Utils;
 using Desafios.Nubimetrics.Application.Utils.Interfaces;
 using Desafios.Nubimetrics.Persistence;
@@ -96,6 +98,9 @@ namespace Desafios.Nubimetrics.Web.API
 
             services.AddMediatR(typeof(BusquedaEventHandler));
             services.AddTransient<BusquedaService>();
+
+            services.AddMediatR(typeof(UsuariosEventHandler));
+            services.AddTransient<UsuariosService>();
 
 
 
