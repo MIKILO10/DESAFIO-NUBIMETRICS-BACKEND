@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Desafios.Nubimetrics.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Desafios.Nubimetrics.Persistence.Context
 {
@@ -8,10 +9,11 @@ namespace Desafios.Nubimetrics.Persistence.Context
         {
         }
 
-       // public virtual DbSet<Pais> Pais { get; set; } = null!;
+        public virtual DbSet<Usuarios> Usuarios { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(NubimetricsDbContext).Assembly);
            
         }
     }

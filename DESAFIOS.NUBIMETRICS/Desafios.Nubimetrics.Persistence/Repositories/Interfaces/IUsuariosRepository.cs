@@ -3,7 +3,7 @@ using Desafios.Nubimetrics.Persistence.Generics.Interfaces;
 
 namespace Desafios.Nubimetrics.Persistence.Repositories.Interfaces
 {
-    public interface IPaisRepository:IGenericRepository<Pais>
+    public interface IUsuariosRepository:IGenericRepository<Usuarios>
     {
     }
 }

@@ -6,10 +6,10 @@ using Microsoft.Extensions.Logging;
 
 namespace Desafios.Nubimetrics.Persistence.Repositories
 {
-    public class PaisRepository : GenericRepository<Pais>, IPaisRepository
+    public class UsuariosRepository : GenericRepository<Usuarios>, IUsuariosRepository
     {
         private readonly NubimetricsDbContext _nubimetricsDbContext;
-        public PaisRepository(NubimetricsDbContext nubimetricsDbContext, ILogger logger) : base(nubimetricsDbContext, logger)
+        public UsuariosRepository(NubimetricsDbContext nubimetricsDbContext, ILogger logger) : base(nubimetricsDbContext, logger)
         {
             _nubimetricsDbContext= nubimetricsDbContext;
 
