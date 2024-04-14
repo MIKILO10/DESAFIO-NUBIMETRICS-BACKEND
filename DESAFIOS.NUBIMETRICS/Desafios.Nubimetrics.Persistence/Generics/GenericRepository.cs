@@ -20,7 +20,7 @@ namespace Desafios.Nubimetrics.Persistence.Generics
         }
 
 
-   
+
         public virtual async Task<Result<T>> Create(T entity)
         {
             try
@@ -36,15 +36,20 @@ namespace Desafios.Nubimetrics.Persistence.Generics
             catch (Exception ex)
             {
                 _logger.LogError(ex, "{Repo} Insert function error", "");
-                throw new Exception(ex.Message);
 
+                throw new Exception(ex.Message);
             }
         }
 
-        public virtual async Task<Result<T>> Update(T entity)
+        public virtual async Task<Result<T>> Update(T entity, int id)
         {
             try
             {
+                var exist  = await dbSet.FindAsync(id);
+
+                if (exist == null)
+                    return Result<T>.Failure($"No se encontro el registro con el id {id}");
+
                 entity.FechaModificacion = DateTime.Now;
 
                 var dbEntry = _context.Entry(entity);
@@ -64,10 +69,18 @@ namespace Desafios.Nubimetrics.Persistence.Generics
         }
 
        
-        public virtual async Task<Result<T>> Delete(T entity)
+        public virtual async Task<Result<T>> Delete(int id)
         {
             try
             {
+
+                var entity = await dbSet.FindAsync(id);
+
+                if (entity == null)
+                    return Result<T>.Failure($"No se encontro el registro con el id {id}");
+
+
+
                 entity.EstaActivo = false;
                 entity.FechaEliminacion = DateTime.Now;
 
