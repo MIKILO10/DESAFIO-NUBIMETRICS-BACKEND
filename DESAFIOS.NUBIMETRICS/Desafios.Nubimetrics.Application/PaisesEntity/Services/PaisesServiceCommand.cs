@@ -11,6 +11,6 @@ namespace Desafios.Nubimetrics.Application.PaisesEntity.Services
 {
     public partial class PaisService
     {
-      
+
     }
 }

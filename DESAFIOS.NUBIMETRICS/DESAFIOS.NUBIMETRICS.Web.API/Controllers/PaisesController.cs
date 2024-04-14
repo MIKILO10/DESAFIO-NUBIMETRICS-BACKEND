@@ -28,6 +28,12 @@ namespace Desafios.Nubimetrics.Web.API.Controllers
             return Ok(result);
         }
 
+        [HttpGet("{id:alpha}")]
+        public async Task<IActionResult> GetById(string id)
+        {
+            var result = await _mediator.Send(new PaisGetById(id));
+            return Ok(result);
+        }
     }
 
 }

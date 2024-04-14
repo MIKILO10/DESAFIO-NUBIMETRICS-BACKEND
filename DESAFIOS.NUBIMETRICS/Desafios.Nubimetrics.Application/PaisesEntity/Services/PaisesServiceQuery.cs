@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Azure;
+using Desafios.Nubimetrics.Application.PaisesEntity.Handlers;
 using Desafios.Nubimetrics.Application.Utils;
 using Desafios.Nubimetrics.Application.Utils.Interfaces;
 using Desafios.Nubimetrics.DTO.PaisEntity;
@@ -6,6 +8,7 @@ using Desafios.Nubimetrics.DTO.Utils;
 using Desafios.Nubimetrics.Persistence.UnitOfWork;
 using MediatR;
 using Microsoft.Extensions.Options;
+using System.Net;
 
 namespace Desafios.Nubimetrics.Application.PaisesEntity.Services
 {
@@ -35,6 +38,17 @@ namespace Desafios.Nubimetrics.Application.PaisesEntity.Services
             return result;
         }
 
+        public async Task<Result<PaisArgGetDTO>> GetById(string request)
+        {
+            List<string> Ids = new List<string>() { "BR", "CO" };
 
+            if (Ids.Contains(request.ToUpper()))
+            {
+                return Result<PaisArgGetDTO>.Failure($"Error {(int)HttpStatusCode.Unauthorized} {HttpStatusCode.Unauthorized} de http",(int) HttpStatusCode.Unauthorized);
+            }
+            var result = await communication.GetById<PaisArgGetDTO>(microservices.Value.Pais, request.ToUpper());
+            return result;
+        }
     }
 }
+
