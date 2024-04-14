@@ -20,4 +20,8 @@
     <ProjectReference Include="..\Desafios.Nubimetrics.Persistence\Desafios.Nubimetrics.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BusquedasEntity\Others\" />
+  </ItemGroup>
+
 </Project>

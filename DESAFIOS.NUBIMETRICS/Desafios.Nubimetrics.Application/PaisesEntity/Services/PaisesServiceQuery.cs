@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using Azure;
-using Desafios.Nubimetrics.Application.PaisesEntity.Handlers;
 using Desafios.Nubimetrics.Application.Utils;
 using Desafios.Nubimetrics.Application.Utils.Interfaces;
 using Desafios.Nubimetrics.DTO.PaisEntity;

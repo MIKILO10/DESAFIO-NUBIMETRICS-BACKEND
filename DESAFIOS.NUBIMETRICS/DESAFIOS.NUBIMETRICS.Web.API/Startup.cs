@@ -1,4 +1,6 @@
-﻿using Desafios.Nubimetrics.Application.PaisesEntity.Handlers;
+﻿using Desafios.Nubimetrics.Application.BusquedasEntity.Handler;
+using Desafios.Nubimetrics.Application.BusquedasEntity.Services;
+using Desafios.Nubimetrics.Application.PaisesEntity.Handlers;
 using Desafios.Nubimetrics.Application.PaisesEntity.Services;
 using Desafios.Nubimetrics.Application.Utils;
 using Desafios.Nubimetrics.Application.Utils.Interfaces;
@@ -88,8 +90,15 @@ namespace Desafios.Nubimetrics.Web.API
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddHttpContextAccessor();
             services.AddScoped<NubimetricsUnitOfWork>();
+
             services.AddMediatR(typeof(PaisesEventHandler));
             services.AddTransient<PaisService>();
+
+            services.AddMediatR(typeof(BusquedaEventHandler));
+            services.AddTransient<BusquedaService>();
+
+
+
         }
 
         // Método para configurar el middleware de la aplicación.

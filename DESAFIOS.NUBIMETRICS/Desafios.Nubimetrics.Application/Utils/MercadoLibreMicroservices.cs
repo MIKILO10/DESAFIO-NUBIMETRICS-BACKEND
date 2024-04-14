@@ -9,5 +9,6 @@ namespace Desafios.Nubimetrics.Application.Utils
     public class MercadoLibreMicroservices
     {
         public string Pais{ get; set; }
+        public string Busqueda { get; set; }
     }
 }

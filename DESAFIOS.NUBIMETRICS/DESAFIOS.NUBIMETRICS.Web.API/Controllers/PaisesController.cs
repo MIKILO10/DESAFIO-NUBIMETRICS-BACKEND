@@ -18,8 +18,8 @@ namespace Desafios.Nubimetrics.Web.API.Controllers
         {
             _mapper = mapper;
             _mediator = mediator;
-
         }
+
         [HttpGet("All")]
         public async Task<IActionResult> GetByAll()
         {
@@ -28,10 +28,10 @@ namespace Desafios.Nubimetrics.Web.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet("{id:alpha}")]
-        public async Task<IActionResult> GetById(string id)
+        [HttpGet("{Pais:alpha}")]
+        public async Task<IActionResult> GetById(string pais)
         {
-            var result = await _mediator.Send(new PaisGetById(id));
+            var result = await _mediator.Send(new PaisGetById(pais));
             return Ok(result);
         }
     }
