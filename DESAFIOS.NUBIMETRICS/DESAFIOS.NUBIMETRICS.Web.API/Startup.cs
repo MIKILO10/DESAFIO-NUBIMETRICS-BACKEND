@@ -1,4 +1,12 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Desafios.Nubimetrics.Application.PaisesEntity.Handlers;
+using Desafios.Nubimetrics.Application.PaisesEntity.Services;
+using Desafios.Nubimetrics.Application.Utils;
+using Desafios.Nubimetrics.Application.Utils.Interfaces;
+using Desafios.Nubimetrics.Persistence;
+using Desafios.Nubimetrics.Persistence.UnitOfWork;
+using MediatR;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 using System.Text.Json.Serialization;
 
 namespace Desafios.Nubimetrics.Web.API
@@ -25,10 +33,19 @@ namespace Desafios.Nubimetrics.Web.API
         {
             services.AddOptions();
 
+            services.Configure<MercadoLibreMicroservices>(Configuration.GetSection("Microservices"));
+            services.AddScoped<MercadoLibreMicroservices>();
+            services.AddHttpClient<IGenericCommunication, HttpCommunication>();
+
+
+
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
             services.AddControllers();
 
+            services.AddApplication();
+
+            services.AddPersistence(Configuration);
 
 
 
@@ -67,6 +84,12 @@ namespace Desafios.Nubimetrics.Web.API
                     builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
                 });
             });
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddHttpContextAccessor();
+            services.AddScoped<NubimetricsUnitOfWork>();
+            services.AddMediatR(typeof(PaisesEventHandler));
+            services.AddTransient<PaisService>();
         }
 
         // Método para configurar el middleware de la aplicación.

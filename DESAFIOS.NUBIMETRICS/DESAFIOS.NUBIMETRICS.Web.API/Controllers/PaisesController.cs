@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Desafios.Nubimetrics.Application.PaisesEntity.Handlers;
+using Desafios.Nubimetrics.DTO.PaisEntity;
+using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Desafios.Nubimetrics.Web.API.Controllers
@@ -7,10 +11,21 @@ namespace Desafios.Nubimetrics.Web.API.Controllers
     [ApiController]
     public class PaisesController : ControllerBase
     {
-        [HttpGet("{pais:alpha}")]
-        public IActionResult GetByCountries(string pais)
+        private readonly IMapper _mapper;
+        private readonly IMediator _mediator;
+
+        public PaisesController(IMapper mapper, IMediator mediator)
         {
-            return Ok(new string[] { pais });
+            _mapper = mapper;
+            _mediator = mediator;
+
+        }
+        [HttpGet("All")]
+        public async Task<IActionResult> GetByAll()
+        {
+            var result = await _mediator.Send(new PaisGetAll());
+      
+            return Ok(result);
         }
 
     }

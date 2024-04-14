@@ -9,18 +9,15 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
-    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Desafios.Nubimetrics.Domain\Desafios.Nubimetrics.Domain.csproj" />
     <ProjectReference Include="..\Desafios.Nubimetrics.DTO\Desafios.Nubimetrics.DTO.csproj" />
     <ProjectReference Include="..\Desafios.Nubimetrics.Persistence\Desafios.Nubimetrics.Persistence.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="PaisesEntity\Others\" />
   </ItemGroup>
 
 </Project>
