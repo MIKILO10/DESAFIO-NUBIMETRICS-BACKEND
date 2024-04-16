@@ -1,0 +1,5 @@
+2024-04-16 01:29:09.616 -03:00 [INF] Usuarios GetAll function succeeded
+2024-04-16 01:29:20.498 -03:00 [INF] Usuarios Insert function succeeded
+2024-04-16 01:29:31.506 -03:00 [INF] Usuarios Delete function succeeded
+2024-04-16 01:29:41.702 -03:00 [INF] Usuarios Update function succeeded
+2024-04-16 01:30:08.669 -03:00 [INF] Usuarios Delete function succeeded
