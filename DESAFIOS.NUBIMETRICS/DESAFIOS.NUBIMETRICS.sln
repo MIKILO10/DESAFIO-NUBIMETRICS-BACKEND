@@ -5,15 +5,13 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafios.Nubimetrics.API", "DESAFIOS.NUBIMETRICS.Web.API\Desafios.Nubimetrics.API.csproj", "{917E2F35-448E-430A-A5FB-9876A066C91B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafios.Nubimetrics.Application", "Desafios.Nubimetrics.Application\Desafios.Nubimetrics.Application.csproj", "{DDB3F0CA-1277-4E19-8280-D7210BD42CD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafios.Nubimetrics.Application", "Desafios.Nubimetrics.Application\Desafios.Nubimetrics.Application.csproj", "{DDB3F0CA-1277-4E19-8280-D7210BD42CD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafios.Nubimetrics.Domain", "Desafios.Nubimetrics.Domain\Desafios.Nubimetrics.Domain.csproj", "{76C24155-C8F8-42D9-8E69-84D3621E3599}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafios.Nubimetrics.Domain", "Desafios.Nubimetrics.Domain\Desafios.Nubimetrics.Domain.csproj", "{76C24155-C8F8-42D9-8E69-84D3621E3599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafios.Nubimetrics.DTO", "Desafios.Nubimetrics.DTO\Desafios.Nubimetrics.DTO.csproj", "{EA1901C1-452A-4D1F-B8EE-39763EDA9543}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafios.Nubimetrics.DTO", "Desafios.Nubimetrics.DTO\Desafios.Nubimetrics.DTO.csproj", "{EA1901C1-452A-4D1F-B8EE-39763EDA9543}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafios.Nubimetrics.Persistence", "Desafios.Nubimetrics.Persistence\Desafios.Nubimetrics.Persistence.csproj", "{879E1EEE-A492-4853-9921-CE7D57E85CF5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desafios.Nubimetrics.Quality", "Desafios.Nubimetrics.Quality\Desafios.Nubimetrics.Quality.csproj", "{4A9D51CE-3F26-480F-8A43-86E28ED7EB27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Desafios.Nubimetrics.Persistence", "Desafios.Nubimetrics.Persistence\Desafios.Nubimetrics.Persistence.csproj", "{879E1EEE-A492-4853-9921-CE7D57E85CF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{879E1EEE-A492-4853-9921-CE7D57E85CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{879E1EEE-A492-4853-9921-CE7D57E85CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{879E1EEE-A492-4853-9921-CE7D57E85CF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4A9D51CE-3F26-480F-8A43-86E28ED7EB27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4A9D51CE-3F26-480F-8A43-86E28ED7EB27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4A9D51CE-3F26-480F-8A43-86E28ED7EB27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4A9D51CE-3F26-480F-8A43-86E28ED7EB27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

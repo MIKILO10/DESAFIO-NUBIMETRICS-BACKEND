@@ -10,5 +10,8 @@ namespace Desafios.Nubimetrics.Application.Utils
     {
         public string Pais{ get; set; }
         public string Busqueda { get; set; }
+        public string Currencies { get; set; }
+        public string Currency { get; set; }
+
     }
 }

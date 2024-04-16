@@ -1,5 +1,7 @@
 ﻿using Desafios.Nubimetrics.Application.BusquedasEntity.Handler;
 using Desafios.Nubimetrics.Application.BusquedasEntity.Services;
+using Desafios.Nubimetrics.Application.CurrenciesEntity.Handlers;
+using Desafios.Nubimetrics.Application.CurrenciesEntity.Services;
 using Desafios.Nubimetrics.Application.PaisesEntity.Handlers;
 using Desafios.Nubimetrics.Application.PaisesEntity.Services;
 using Desafios.Nubimetrics.Application.UsuariosEntity.Handler;
@@ -102,6 +104,9 @@ namespace Desafios.Nubimetrics.Web.API
 
             services.AddMediatR(typeof(UsuariosEventHandler));
             services.AddTransient<UsuariosService>();
+
+            services.AddMediatR(typeof(CurrenciesEventHandler));
+            services.AddTransient<CurrenciesService>();
 
 
 

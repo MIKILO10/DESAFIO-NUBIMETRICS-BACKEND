@@ -1,10 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using CsvHelper;
+using CsvHelper.Configuration;
+using CsvHelper.Configuration.Attributes;
+using Desafios.Nubimetrics.Application.Utils.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
+using System.IO;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Desafios.Nubimetrics.Application.Utils
 {
@@ -13,6 +14,7 @@ namespace Desafios.Nubimetrics.Application.Utils
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
             return services;
         }
     }
