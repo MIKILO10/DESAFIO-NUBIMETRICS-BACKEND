@@ -24,51 +24,51 @@ namespace Desafios.Nubimetrics.API.Controllers
         }
 
 
-        [HttpGet("All")]
-        public async Task<IActionResult> GetByAll()
-        {
-            var result = await _mediator.Send(new UsuariosGetAll());
+        //[HttpGet("All")]
+        //public async Task<IActionResult> GetByAll()
+        //{
+        //    var result = await _mediator.Send(new UsuariosGetAll());
 
-            return Ok(result);
-        }
+        //    return Ok(result);
+        //}
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetById(int id)
-        {
-            var result = await _mediator.Send(new UsuariosGetById(id));
+        //[HttpGet("{id:int}")]
+        //public async Task<IActionResult> GetById(int id)
+        //{
+        //    var result = await _mediator.Send(new UsuariosGetById(id));
 
-            return Ok(result);
-        }
+        //    return Ok(result);
+        //}
 
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] UsuariosCreateCommand request)
-        {
-            var result = await _mediator.Send(request);
+        //[HttpPost]
+        //public async Task<IActionResult> Create([FromBody] UsuariosCreateCommand request)
+        //{
+        //    var result = await _mediator.Send(request);
 
-            return Ok(result);
-        }
+        //    return Ok(result);
+        //}
 
-        [HttpPut("{id:int}")]
-        public async Task<IActionResult> Update(int id, [FromBody] UsuariosUpdateCommand request)
-        {
-            if (id != request.Id)
-            {
-                var badRequest = Result<UsuariosUpdateDTO>.Failure("Error al validar el Id de la Entidad solicitada", (int)HttpStatusCode.BadRequest);
-                return BadRequest(badRequest);
-            }
-            var result = await _mediator.Send(request);
+        //[HttpPut("{id:int}")]
+        //public async Task<IActionResult> Update(int id, [FromBody] UsuariosUpdateCommand request)
+        //{
+        //    if (id != request.Id)
+        //    {
+        //        var badRequest = Result<UsuariosUpdateDTO>.Failure("Error al validar el Id de la Entidad solicitada", (int)HttpStatusCode.BadRequest);
+        //        return BadRequest(badRequest);
+        //    }
+        //    var result = await _mediator.Send(request);
 
-            return Ok(result);
-        }
+        //    return Ok(result);
+        //}
 
-        [HttpDelete("{id:int}")]
+        //[HttpDelete("{id:int}")]
 
-        public async Task<IActionResult> Delete(int id)
-        {
-            var result = await _mediator.Send(new UsuariosDeleteCommand { Id = id });
+        //public async Task<IActionResult> Delete(int id)
+        //{
+        //    var result = await _mediator.Send(new UsuariosDeleteCommand { Id = id });
 
-            return Ok(result);
-        }
+        //    return Ok(result);
+        //}
 
     }
 }
