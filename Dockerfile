@@ -1,25 +1,28 @@
-# Establece la imagen base para el entorno de construcción
+# Use the official .NET SDK image for build environment
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build-env
 WORKDIR /app
 
-# Copia todo el contenido del directorio actual al contenedor
+# Copy everything and restore as distinct layers
 COPY . .
 
-# Cambia el directorio de trabajo al directorio del proyecto
+# Change the directory to the project folder
 WORKDIR /app/DESAFIOS.NUBIMETRICS/DESAFIOS.NUBIMETRICS.Web.API
 
-# Restaura las dependencias de la aplicación
+# Restore dependencies
 RUN dotnet restore
 
-# Compila y publica la aplicación en modo Release
-RUN dotnet publish -c Release -o out
+# Build and publish the release version
+RUN dotnet publish -c Release -o /app/out
 
-# Establece la imagen base para el runtime
+# Use the official ASP.NET Core image for runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
-# Copia los archivos publicados desde la fase de construcción
-COPY --from=build-env /app/DESAFIOS.NUBIMETRICS/DESAFIOS.NUBIMETRICS.Web.API/out .
+# Copy the published files from the build environment
+COPY --from=build-env /app/out .
 
-# Especifica el comando de entrada para ejecutar la aplicación
-ENTRYPOINT ["dotnet", "DESAFIOS.NUBIMETRICS.Web.API.dll"]
+# Expose the new port
+EXPOSE 8081
+
+# Specify the entry point to run your application
+ENTRYPOINT ["dotnet", "Desafios.Nubimetrics.API.dll"]

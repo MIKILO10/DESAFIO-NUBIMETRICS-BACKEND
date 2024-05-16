@@ -50,6 +50,13 @@ namespace Desafios.Nubimetrics.Web.API
 
             services.AddControllers();
 
+  // Configurar Data Protection
+        services.AddDataProtection()
+            .PersistKeysToFileSystem(new DirectoryInfo(@"/root/.aspnet/DataProtection-Keys"))
+            .ProtectKeysWithDpapi();
+
+
+
             services.AddApplication();
 
             services.AddPersistence(Configuration);
